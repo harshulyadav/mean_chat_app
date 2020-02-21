@@ -6,8 +6,8 @@
 /out-tsc
 
 # dependencies
-mean_chat_app/public/node_modules/
-mean_chat_app/server/node_modules/
+/mean_chat_app/public/node_modules/
+/mean_chat_app/server/node_modules/
 
 # profiling files
 chrome-profiler-events.json
