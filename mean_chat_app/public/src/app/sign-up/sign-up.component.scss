@@ -1,0 +1,33 @@
+.signup-body {
+  background-image: linear-gradient(to bottom right, #8ce8ec, #3d6932);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.signup-form {
+  margin-top: 160px;
+  text-align: center;
+}
+
+.form-frame {
+  border: 4px solid #dab7b7;
+  border-radius: 12px;
+  background-image: linear-gradient(to bottom right, #bad1d2, #ffffff);
+  width: 500px;
+  form {
+    min-height: 550px;
+  }
+}
+
+.error-text {
+  text-align: left;
+  margin-left: 2px;
+  margin-top: 3px;
+  color: #f96363;
+  font-size: 14px;
+}
+
+.btm-mrgn {
+  margin-bottom: 10px;
+}

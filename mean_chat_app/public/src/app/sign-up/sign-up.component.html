@@ -1,0 +1,119 @@
+<div class="signup-body">
+
+    <div class="signup-form" *ngIf="showLoginForm == false">
+        <div class="container form-frame">
+            <h3>SIGN UP</h3>
+            <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                <div class="form-group">
+                    <label for="email">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" formControlName="first_name">
+                    <div class="error-text"
+                        *ngIf="signUpForm.controls.first_name.touched || signUpForm.controls.first_name.dirty">
+                        <span *ngIf="signUpForm.controls.first_name.hasError('required')">First Name is reuired</span>
+                        <span *ngIf="signUpForm.controls.first_name.hasError('minlength')">Minimum 3 characters
+                            required</span>
+                        <span *ngIf="signUpForm.controls.first_name.hasError('maxlength')">Maximum 30 characters
+                            required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="last_name">
+                    <div class="error-text"
+                        *ngIf="signUpForm.controls.last_name.touched || signUpForm.controls.last_name.dirty">
+                        <span *ngIf="signUpForm.controls.last_name.hasError('required')">Last Name is reuired</span>
+                        <span *ngIf="signUpForm.controls.last_name.hasError('minlength')">Minimum 3 characters
+                            required</span>
+                        <span *ngIf="signUpForm.controls.last_name.hasError('maxlength')">Maximum 30 characters
+                            required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Email</label>
+                    <input type="password" class="form-control" placeholder="Enter Email" formControlName="email">
+                    <div class="error-text"
+                        *ngIf="signUpForm.controls.email.touched || signUpForm.controls.email.dirty">
+                        <span *ngIf="signUpForm.controls.email.hasError('required')">Email is reuired</span>
+                        <span *ngIf="signUpForm.controls.email.hasError('minlength')">Minimum 3 characters
+                            required</span>
+                        <span *ngIf="signUpForm.controls.email.hasError('maxlength')">Maximum 30 characters
+                            required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter password" formControlName="password">
+                    <div class="error-text"
+                        *ngIf="signUpForm.controls.password.touched || signUpForm.controls.password.dirty">
+                        <span *ngIf="signUpForm.controls.password.hasError('required')">Password is reuired</span>
+                        <span *ngIf="signUpForm.controls.password.hasError('minlength')">Minimum 3 characters
+                            required</span>
+                        <span *ngIf="signUpForm.controls.password.hasError('maxlength')">Maximum 30 characters
+                            required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Confirm password"
+                        formControlName="confirm_Password">
+                    <div class="error-text"
+                        *ngIf="signUpForm.controls.confirm_Password.touched || signUpForm.controls.confirm_Password.dirty">
+                        <span *ngIf="signUpForm.controls.confirm_Password.hasError('required')">Confirm password is
+                            reuired</span>
+                        <span *ngIf="signUpForm.controls.confirm_Password.hasError('minlength')">Minimum 3 characters
+                            required</span>
+                        <span *ngIf="signUpForm.controls.confirm_Password.hasError('maxlength')">Maximum 30 characters
+                            required</span>
+                        <span *ngIf="signUpForm.controls.confirm_Password.hasError('notMatched')">Passwords does not
+                            match</span>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success btm-mrgn">Submit</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" (click)="showLoginForm = true;">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="signup-form" *ngIf="showLoginForm == true">
+        <div class="container form-frame">
+            <h3>LOGIN</h3>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="form-group">
+                    <label for="pwd">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email">
+                    <div class="error-text"
+                        *ngIf="loginForm.controls.email.touched || loginForm.controls.email.dirty">
+                        <span *ngIf="loginForm.controls.email.hasError('required')">Email is reuired</span>
+                        <span *ngIf="loginForm.controls.email.hasError('minlength')">Minimum 3 characters
+                            required</span>
+                        <span *ngIf="loginForm.controls.email.hasError('maxlength')">Maximum 30 characters
+                            required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter password" formControlName="password">
+                    <div class="error-text"
+                        *ngIf="loginForm.controls.password.touched || loginForm.controls.password.dirty">
+                        <span *ngIf="loginForm.controls.password.hasError('required')">Password is reuired</span>
+                        <span *ngIf="loginForm.controls.password.hasError('minlength')">Minimum 3 characters
+                            required</span>
+                        <span *ngIf="loginForm.controls.password.hasError('maxlength')">Maximum 30 characters
+                            required</span>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success btm-mrgn">Submit</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" (click)="showLoginForm = false;">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
